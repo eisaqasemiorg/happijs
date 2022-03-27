@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha api/**/tests/*.js --exit --timeout 10000",
-    "test:coverage": "nyc mocha api/**/tests/*.js --exit --timeout 100000 -- --timeout 100000",
+    "test:coverage": "nyc --reporter=lcov mocha api/**/tests/*.js --exit --timeout 10000",
     "start": "node server.js",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha api/**/tests/*.js -- --exit",
     "fullcoverage": "./node_modules/.bin/istanbul cover --include-all-sources --root ./api ./node_modules/.bin/_mocha api/**/tests/*.js -- --exit"

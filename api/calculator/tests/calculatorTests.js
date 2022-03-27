@@ -1,6 +1,7 @@
 const assert = require("assert");
 const Hapi = require("hapi");
 const add = require("../routes/add");
+const subtract = require("../routes/subtract");
 
 describe("add tests", () => {
   let server;
@@ -8,6 +9,7 @@ describe("add tests", () => {
   before(async () => {
     server = new Hapi.Server();
     server.route(add);
+    server.route(subtract);
     await server.initialize();
   });
 
@@ -30,6 +32,24 @@ describe("add tests", () => {
     console.log(res.payload);
 
     assert(Number(res.payload) === 3);
+  });
+
+
+  it("subtract 2 positive number", async () => {
+    const payload = {
+      a: 10,
+      b: 6,
+    };
+
+    const res = await server.inject({
+      url: "/api/v1/subtract",
+      method: "POST",
+      payload: payload
+    });
+    
+    console.log(res.payload);
+
+    assert(Number(res.payload) === 4);
   });
 
 });
