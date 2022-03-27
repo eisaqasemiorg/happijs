@@ -9,6 +9,7 @@ module.exports = {
   config: {
     handler: async (req, h) => {
        return req.payload.a - req.payload.b
+       console.log('hello'); //unreachable code
     },
     validate: {
       payload: {
