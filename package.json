@@ -1,0 +1,45 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha api/**/tests/*.js --exit --timeout 10000",
+    "test:coverage": "nyc mocha api/**/tests/*.js --exit --timeout 100000 -- --timeout 100000",
+    "start": "node server.js",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha api/**/tests/*.js -- --exit",
+    "fullcoverage": "./node_modules/.bin/istanbul cover --include-all-sources --root ./api ./node_modules/.bin/_mocha api/**/tests/*.js -- --exit"
+  },
+  "author": "Eisa Qasemi",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^5.1.1",
+    "amqplib": "^0.6.0",
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "boom": "^7.2.0",
+    "glob": "^7.1.2",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.1.0",
+    "handlebars": "^4.5.3",
+    "hapi": "^17.4.0",
+    "hapi-auth-cookie": "^8.1.0",
+    "hapi-auth-jwt2": "^8.1.0",
+    "hapi-raven": "^7.0.0",
+    "inert": "^5.1.0",
+    "jsonwebtoken": "^8.2.1",
+    "mocha": "^7.1.2",
+    "mongoose": "^5.7.0",
+    "password-validator": "^4.1.1",
+    "underscore": "^1.10.2",
+    "uuid": "^3.3.2",
+    "vision": "^5.3.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mock-require": "^3.0.3",
+    "nock": "^10.0.6",
+    "nyc": "^15.1.0"
+  }
+}

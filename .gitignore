@@ -1,0 +1,8 @@
+node_modules
+env.bat
+env.sh
+env
+.env
+.idea
+coverage
+log
