@@ -24,5 +24,8 @@
     "objectLiteralShorthandProperties": true,
     "spread": true,
     "templateStrings": true
+  },
+  "rules":{
+    "no-console": 0
   }
 }
