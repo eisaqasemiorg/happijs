@@ -7,19 +7,23 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  test:
+    environment: production
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x]
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-
       - run: npm install
-      - run: npm test
+      - run: npm run test:coverage
+      # - name: Upload coverage
+      #   uses: paambaati/codeclimate-action@v3.0.0
+      #   env:
+      #     CC_TEST_REPORTER_ID: ff60cfbef3f8a3d1e0e426985b354397f7c859ccdb3ba4585729f070af402dde
+
+          
